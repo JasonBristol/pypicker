@@ -4,8 +4,7 @@ from random import choice
 parser = argparse.ArgumentParser(
 	description='Randomly pick n items from a list',
 	epilog='Created by Jason Bristol <Gethsemane369@gmail.com>')
-parser.add_argument('-n', type=int, default=1,
-                   help='number of items to pick (default 1)')
+parser.add_argument('-n', type=int, default=1, help='number of items to pick (default 1)')
 parser.add_argument('-i', help='input file of items to choose from')
 parser.add_argument('-o', help='output file to write results to')
 
