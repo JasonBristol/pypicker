@@ -4,7 +4,7 @@ pypicker
 A command line random picker for python.
 
 ```
-usage: pypicker.py [-h] [-ng NG] [-i I] [-o O] [-u] [-v] N
+usage: pypicker.py [-h] [-ng NG] [-i I] [-o O] [-j J] [-u] [-v] N
 
 Randomly pick n items from a list
 
@@ -16,6 +16,7 @@ optional arguments:
   -ng NG      number of result groups to generate (default 1)
   -i I        input file of items to choose from
   -o O        output file to write results to
+  -j J        join results using specified delimeter
   -u          force unique results
   -v          verbose output
 ```
