@@ -26,7 +26,7 @@ if args.o != None:
 	with open('out.txt','a') as f:
 		for i in random.sample(options, args.num): f.write(i + '\n')
 else:
-	print "Picking " + repr(args.num) + " individuals out of " + repr(len(options)) + ":"
+	print "Picking {} individuals out of {}:".format(args.num, len(options))
 	for i in random.sample(options, args.num): print i
 	
 sys.exit(0)
