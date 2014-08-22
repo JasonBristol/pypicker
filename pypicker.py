@@ -15,18 +15,21 @@ args = parser.parse_args()
 
 options = []
 
-if args.i != None:
-	options = [line.strip() for line in open(args.i)]
+def pick(num, ngroup, input_file, output_file):
+	if input_file != None:
+		options = [line.strip() for line in open(input_file)]
 
-if not (args.num > 0 and args.num <= len(options)):
-	print "\nn out of bounds, please select a number within 1 < n < total items\n"
-	sys.exit(1)
+	if not (num > 0 and num <= len(options)):
+		print "\nn out of bounds, please select a number within 1 < n < total items\n"
+		sys.exit(1)
 
-if args.o != None:
-	with open('out.txt','a') as f:
-		for i in random.sample(options, args.num): f.write(i + '\n')
-else:
-	print "Picking {} individuals out of {}:".format(args.num, len(options))
-	for i in random.sample(options, args.num): print i
-	
-sys.exit(0)
+	if output_file != None:
+		with open('out.txt','a') as f:
+			for i in random.sample(options, num): f.write(i + '\n')
+	else:
+		print "Picking {} individuals out of {}:".format(num, len(options))
+		for i in random.sample(options, num): print i
+
+if __name__ == "__main__": 
+	pick(args.num, args.ng, args.i, args.o)
+	sys.exit(0)
