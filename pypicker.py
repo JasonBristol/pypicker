@@ -10,7 +10,6 @@ parser.add_argument('-ng',              type=int,   default=1,   help='number of
 parser.add_argument('-i',               type=str,                help='input file of items to choose from')
 parser.add_argument('-o',               type=str,                help='output file to write results to')
 parser.add_argument('-j',               type=str,                help='join results using specified delimeter')
-parser.add_argument('-u',               action='store_true',     help='force unique results')
 parser.add_argument('-v',               action='store_true',     help='verbose output')
 
 args = parser.parse_args()
