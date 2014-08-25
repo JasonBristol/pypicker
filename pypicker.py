@@ -16,7 +16,7 @@ args = parser.parse_args()
 
 options = []
 
-def pick(num, ngroup, input_file, output_file, verbose, join):
+def pick(num, input_file, output_file, verbose, join):
 	if input_file != None: options = [line.strip() for line in open(input_file)]
 
 	if not (num > 0 and num <= len(options)):
@@ -26,14 +26,15 @@ def pick(num, ngroup, input_file, output_file, verbose, join):
 	results = random.sample(options, num)
 
 	if output_file == None:
-		if verbose: print "Picking {} individuals out of {}:".format(num, len(options))
+		if verbose: print "\nPicking {} individuals out of {}:".format(num, len(options))
 		print "\n".join(results) if join == None else "{} ".format(join).join(results)
 	else:
 		with open('out.txt','a') as f:
-			if verbose: f.write("Picking {} individuals out of {}:\n".format(num, len(options)))
+			if verbose: f.write("\nPicking {} individuals out of {}:\n".format(num, len(options)))
 			f.write("\n".join(results) if join == None else "{} ".format(join).join(results))
 			f.close
 			
-if __name__ == "__main__": 
-	pick(args.num, args.ng, args.i, args.o, args.v, args.j)
+if __name__ == "__main__":
+	for n in range(0, args.ng):
+		pick(args.num, args.i, args.o, args.v, args.j)
 	sys.exit(0)
