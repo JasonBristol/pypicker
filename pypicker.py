@@ -29,7 +29,7 @@ def pick(num, input_file, output_file, verbose, join):
 		if verbose: print "\nPicking {} individuals out of {}:".format(num, len(options))
 		print "\n".join(results) if join == None else "{} ".format(join).join(results)
 	else:
-		with open('out.txt','a') as f:
+		with open(output_file,'a') as f:
 			if verbose: f.write("\nPicking {} individuals out of {}:\n".format(num, len(options)))
 			f.write("\n".join(results) if join == None else "{} ".format(join).join(results))
 			f.close
