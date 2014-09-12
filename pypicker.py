@@ -1,3 +1,7 @@
+#!/usr/bin/env python
+
+__author__ = 'Jason Bristol'
+
 import argparse, random, sys
 from random import choice
 
