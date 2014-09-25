@@ -18,4 +18,6 @@ optional arguments:
   -o O        output file to write results to
   -j J        join results using specified delimeter
   -v          verbose output
+
+Created by Jason Bristol <Gethsemane369@gmail.com>
 ```
