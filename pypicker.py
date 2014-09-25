@@ -2,7 +2,7 @@
 
 __author__ = 'Jason Bristol'
 
-import argparse, random, sys
+import argparse, random, sys, os.path
 from random import choice
 
 parser = argparse.ArgumentParser(
@@ -24,7 +24,7 @@ def pick(num, input_file, output_file, verbose, join):
 	if input_file != None: options = [line.strip() for line in open(input_file)]
 
 	if not (num > 0 and num <= len(options)):
-		print "\nn out of bounds, please select a number within 1 < n < total items\n"
+		print "\nn out of bounds, please select a number within 1 <= n <= total items\n"
 		sys.exit(1)
 
 	results = random.sample(options, num)
@@ -33,7 +33,7 @@ def pick(num, input_file, output_file, verbose, join):
 		if verbose: print "\nPicking {} individuals out of {}:".format(num, len(options))
 		print "\n".join(results) if join == None else "{} ".format(join).join(results)
 	else:
-		with open(output_file,'a') as f:
+		with open(output_file,'w') as f:
 			if verbose: f.write("\nPicking {} individuals out of {}:\n".format(num, len(options)))
 			f.write("\n".join(results) if join == None else "{} ".format(join).join(results))
 			f.close
