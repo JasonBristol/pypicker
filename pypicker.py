@@ -21,31 +21,36 @@ args = parser.parse_args()
 
 options      = []
 resultString = []
+sampleSize   = 0
 
 ''' Validates and orchestrates result picks '''
 def pick(n, num_groups, input_file, output_file, verbose, join, unique_groups):
-	
+
 	if n not in range (0, len(options)): raise BoundsException("n out of bounds, please select a number within 1 <= n <= total items\n")
+
+	sampleSize = len(options)
 
 	for i in range(0, num_groups):
 		results = random.sample(options, n)
 
-		if unique_groups: 
-			if (n * num_groups) > len(options): raise ResultSetException("Requested result set is larger than sample size\n")
+		if unique_groups:
+			if (n * num_groups) > sampleSize: raise ResultSetException("Requested result set is larger than sample size\n")
 			else:
 				for result in results:
-					while result in options: options.remove(result)
+					while result in options:
+						options.remove(result)
 
-		if verbose: resultString.append("\nPicking {} individuals out of {}:".format(n, len(options)))
+		if verbose: resultString.append("\nPicking {} individuals out of {}:".format(n, len(options) + n))
 		resultString.append("\n".join(results) if join == None else "{} ".format(join).join(results))
 
-		if output_file == None: print '\n'.join(resultString)
-		else: 
-			try:
-				with open(output_file,'w') as f: f.write('\n'.join(resultString))
-			except:  raise OutputException(sys.exc_info[0])
-			finally: f.close
-			
+	if output_file == None: print '\n'.join(resultString)
+	else:
+		try:
+			with open(output_file,'w') as f:
+				f.write('\n'.join(resultString))
+		except:  raise OutputException(sys.exc_info[0])
+		finally: f.close
+
 ''' Main Method '''			
 if __name__ == "__main__":
 	try:
