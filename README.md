@@ -26,7 +26,7 @@ Created by Jason Bristol <Gethsemane369@gmail.com>
 
 **Randomly pick an item from a list**
 
-```$ python pypicker.py 1 test_input.txt```
+```$ python pypicker.py test_input.txt```
 >Yolanda Holland
 
 ========
