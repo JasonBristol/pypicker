@@ -57,7 +57,7 @@ if __name__ == "__main__":
 		options = [line.strip() for line in open(args.i)]
 		pick(args.n, args.ng, args.i, args.o, args.v, args.j, args.u)
 	except BoundsException      as e: print "\n{}: {}".format(type(e).__name__, e.msg)
-	except OutputException 			as e: print "\n{}: {}".format(type(e).__name__, e.msg)
-	except ResultSetException 	as e: print "\n{}: {}".format(type(e).__name__, e.msg)
+	except OutputException 	    as e: print "\n{}: {}".format(type(e).__name__, e.msg)
+	except ResultSetException   as e: print "\n{}: {}".format(type(e).__name__, e.msg)
 	except                          : print "\n{}: {}".format("Unexpected error", sys.exc_info()[0])
 	finally                         : sys.exit(0)
