@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
-__author__ = 'Jason Bristol'
+__author__  = 'Jason Bristol'
+__version__ = '1.0'
 
 import argparse, random, sys
 from pypicker_exceptions import *
