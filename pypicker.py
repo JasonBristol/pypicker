@@ -3,7 +3,7 @@
 __author__  = 'Jason Bristol'
 __version__ = '1.5'
 
-import argparse, random, sys
+import argparse, random, sys, codecs
 from pypicker_exceptions import *
 
 parser = argparse.ArgumentParser(
@@ -39,23 +39,23 @@ def pick(n, num_groups, input_file, output_file, verbose, join, unique_groups):
       else:
         for result in results: options[:] = [x for x in options if x != result]
     
-    if verbose: resultString.append("Picking {} individual(s) out of {}:".format(n, len(options) + n))
+    if verbose: resultString.append("Picking {} individual(s) out of {}:".format(n, sampleSize - i))
     resultString.append("\n".join(results) if join == None else "{} ".format(join).join(results))
 
-  if output_file == None: print '\n\n'.join(resultString)
+  if output_file == None: print "\n\n".join(resultString)
   else:
     try:
-      with open(output_file,'w') as f: f.write('\n\n'.join(resultString))
-    except:  raise OutputException(sys.exc_info[0])
+      with codecs.open(output_file,'w', 'utf-8') as f: f.write("\n\n".join(resultString))
+    except:  raise OutputException(sys.exc_info[1])
     finally: f.close
 
 ''' Main Method '''     
 if __name__ == "__main__":
   try:
-    options = [line.strip() for line in open(args.i)]
+    options = [line.strip() for line in codecs.open(args.i, 'r', 'utf-8')]
     pick(args.n, args.ng, args.i, args.o, args.v, args.j, args.u)
   except BoundsException      as e: print "\n{}: {}\n".format(type(e).__name__, e.msg)
   except OutputException      as e: print "\n{}: {}\n".format(type(e).__name__, e.msg)
   except ResultSetException   as e: print "\n{}: {}\n".format(type(e).__name__, e.msg)
-  except                          : print "\n{}: {}\n".format("Unexpected error", sys.exc_info()[0])
+  except                          : print "\n{}: {}\n".format("Unexpected error", sys.exc_info()[1])
   finally                         : sys.exit(0)
