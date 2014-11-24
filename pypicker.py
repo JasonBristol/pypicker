@@ -20,27 +20,30 @@ parser.add_argument('-u',               action='store_true',            help='fo
 
 args = parser.parse_args()
 
-options      = []
-resultString = []
-sampleSize   = 0
+options      = []      # Items to choose from
+resultString = []      # Array of result strings
+sampleSize   = [0, 0]  # [<num_picked>, <num_total>]
 
 ''' Validates and orchestrates result picks '''
 def pick(n, num_groups, input_file, output_file, verbose, join, unique_groups):
 
   if n not in range(0, len(options)): raise BoundsException("n out of bounds, please select a number within 1 <= n <= total items")
 
-  sampleSize = len(options)
+  sampleSize[1] = len(options)
 
   for i in range(0, num_groups):
-    results = random.sample(options, n)
+    results   = random.sample(options, n)
+    sampleStr = (sampleSize[1] - sampleSize[0]) if unique_groups else sampleSize[1]
 
     if unique_groups:
-      if (n * num_groups) > sampleSize: raise ResultSetException("Requested result set is larger than sample size")
+      if (n * num_groups) > sampleSize[1]: raise ResultSetException("Requested result set is larger than sample size")
       else:
         for result in results: options[:] = [x for x in options if x != result]
     
-    if verbose: resultString.append("Picking {} item(s) out of {}:".format(n, sampleSize - i))
+    if verbose: resultString.append("Picking {} item(s) out of {}:".format(n, sampleStr))
     resultString.append("\n".join(results) if join == None else "{} ".format(join).join(results))
+
+    sampleSize[0] += n
 
   if output_file == None: print "\n\n".join(resultString)
   else:
