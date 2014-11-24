@@ -39,7 +39,7 @@ def pick(n, num_groups, input_file, output_file, verbose, join, unique_groups):
       else:
         for result in results: options[:] = [x for x in options if x != result]
     
-    if verbose: resultString.append("Picking {} individual(s) out of {}:".format(n, sampleSize - i))
+    if verbose: resultString.append("Picking {} item(s) out of {}:".format(n, sampleSize - i))
     resultString.append("\n".join(results) if join == None else "{} ".format(join).join(results))
 
   if output_file == None: print "\n\n".join(resultString)
