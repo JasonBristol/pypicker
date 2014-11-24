@@ -46,25 +46,25 @@ Herbert Ball
 
 ```$ python pypicker.py 4 test_input.txt -ng 4 -v```
 
->Picking 4 individuals out of 29:<br/>
+>Picking 4 item(s) out of 29:<br/>
 Faith Boone<br/>
 Hilda Mullins<br/>
 Lewis Potter<br/>
 Leona Evans<br/>
 
->Picking 4 individuals out of 29:<br/>
+>Picking 4 item(s) out of 29:<br/>
 Francisco Williams<br/>
 Yolanda Holland<br/>
 Ellis Jennings<br/>
 Danielle Gill<br/>
 
->Picking 4 individuals out of 29:<br/>
+>Picking 4 item(s) out of 29:<br/>
 Jessica Mitchell<br/>
 Renee Willis<br/>
 Betty Lane<br/>
 Yolanda Holland<br/>
 
->Picking 4 individuals out of 29:<br/>
+>Picking 4 item(s) out of 29:<br/>
 Hilda Mullins<br/>
 Jessica Mitchell<br/>
 Boyd Hunter<br/>
@@ -76,25 +76,25 @@ Wilson Marshall<br/>
 
 ```$ python pypicker.py 4 test_input.txt -ng -v -u```
 
->Picking 4 individuals out of 25:<br/>
+>Picking 4 item(s) out of 25:<br/>
 Danielle Gill<br/>
 Boyd Hunter<br/>
 Amos Warner<br/>
 Leona Evans<br/>
 
->Picking 4 individuals out of 21:<br/>
+>Picking 4 item(s) out of 21:<br/>
 Ellis Jennings<br/>
 Francisco Williams<br/>
 Renee Willis<br/>
 Herbert Ball<br/>
 
->Picking 4 individuals out of 17:<br/>
+>Picking 4 item(s) out of 17:<br/>
 Mindy Lopez<br/>
 Faith Boone<br/>
 Hilda Mullins<br/>
 Lucille Clayton<br/>
 
->Picking 4 individuals out of 13:<br/>
+>Picking 4 item(s) out of 13:<br/>
 Yolanda Holland<br/>
 Trevor Goodman<br/>
 Lewis Potter<br/>
