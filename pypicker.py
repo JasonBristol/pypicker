@@ -25,13 +25,18 @@ options      = []      # Items to choose from
 resultString = []      # Array of result strings
 sampleSize   = [0, 0]  # [<num_picked>, <num_total>]
 
-''' Functions '''
+# Functions
 
-''' SRS - A simple random sample is a sample in which every member of the population has an equal chance of being chosen. '''
+# SRS
+#
+# A simple random sample is a sample in which every member of the population has an equal chance of being chosen.
 def SimpleRandomSample(n):
   return random.sample(options, n)
 
-''' SYS - In systematic sampling, every kth member of the population is chosen for the sample, with value of k being approximately N/n (N: # in population; n: # of samples) '''
+# SYS
+#
+# In systematic sampling, every kth member of the population is chosen for the sample, with value of k 
+# being approximately N/n (N: # in population; n: # of samples) '''
 def SystematicSample(n):
   k = len(options) / n
   results = []
@@ -41,7 +46,10 @@ def SystematicSample(n):
 
   return results
 
-''' CLS - A cluster sample is a simple random sample of groups, or clusters, of a population. Each member of the chosen clusters would be part of the final sample. '''
+# CLS
+#
+# A cluster sample is a simple random sample of groups, or clusters, of a population. Each member of the 
+# chosen clusters would be part of the final sample.
 def ClusterSample(n):
   # r = random.randint(2, len(options))
   # d = random.randint(1, (len(options) / 4))
@@ -63,16 +71,19 @@ def ClusterSample(n):
   # return results
   return
 
-''' STS - A stratified sample is obtained by dividing the population into mutually exclusive groups, or strata, and randomly sampling from each of these groups. '''
+# STS
+#
+# A stratified sample is obtained by dividing the population into mutually exclusive groups, or strata, 
+# and randomly sampling from each of these groups.
 def StratifiedSample(n):
   return
 
-''' Helper function to split a list in half '''
+# Helper function to split a list in half
 def split_list(a_list):
   half = len(a_list) / 2
   return a_list[:half], a_list[half:]
 
-''' Validates and orchestrates result picks '''
+# Validates and orchestrates result picks
 def pick(n, num_groups, input_file, output_file, verbose, join, unique_groups, algorithm):
 
   if n not in range(0, len(options)): raise BoundsException("n out of bounds, please select a number within 1 <= n <= total items")
@@ -104,7 +115,7 @@ def pick(n, num_groups, input_file, output_file, verbose, join, unique_groups, a
     except:  raise OutputException(sys.exc_info[1])
     finally: f.close
 
-''' Main Method '''     
+# Main Method     
 if __name__ == "__main__":
   try:
     options = [line.strip() for line in codecs.open(args.i, 'r', 'utf-8')]
