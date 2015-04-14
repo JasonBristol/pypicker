@@ -121,7 +121,7 @@ Phillip Bailey
 
 **Join the results and seperate by a delimeter**
 
-```$ python pypicker.py 4 test_input.txt -j ','```
+```$ python pypicker.py 4 test_input.txt -j ', '```
 
 >Shirley Joseph, Brandon Rice, Ellis Jennings, Anita Larson
 
