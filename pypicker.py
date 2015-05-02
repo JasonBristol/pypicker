@@ -8,7 +8,7 @@ from pypicker_exceptions import *
 
 parser = argparse.ArgumentParser(
   description='Randomly pick n items from a list', 
-  epilog='Created by Jason Bristol <Gethsemane369@gmail.com>')
+  epilog='Created by Jason Bristol')
 
 parser.add_argument('n',   metavar='N', type=int, nargs='?',                                    default=1,     help='number of items to pick (default 1)')
 parser.add_argument('i',   metavar='I', type=str,                                                              help='input file of items to choose from')
