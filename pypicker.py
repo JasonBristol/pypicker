@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 __author__  = 'Jason Bristol'
-__version__ = '2.0'
+__version__ = '2.1'
 
 import argparse, random, sys, codecs, itertools
 from pypicker_exceptions import *
@@ -41,7 +41,7 @@ def SystematicSample(n):
   k = len(options) / n
   results = []
 
-  for i in range(0, n):
+  for i in xrange(0, n):
     results.append(options[k * (i + 1)])
 
   return results
@@ -56,14 +56,14 @@ def ClusterSample(n):
   # clusters = []
   # results  = []
 
-  # for i in range(0, r):
+  # for i in xrange(0, r):
   #   clusters.append(split_list(options))
 
   # for _ in itertools.repeat(None, d):
   #   random.shuffle(clusters)
   #   clusters.pop()
 
-  # for i in range(0, n):
+  # for i in xrange(0, n):
   #   cluster = random.randint(0, len(clusters))
   #   element = random.randint(0, len(clusters[cluster]))
   #   results.append(clusters[cluster][element])
@@ -86,11 +86,11 @@ def split_list(a_list):
 # Validates and orchestrates result picks
 def pick(n, num_groups, input_file, output_file, verbose, join, unique_groups, algorithm):
 
-  if n not in range(0, len(options)): raise BoundsException("n out of bounds, please select a number within 1 <= n <= total items")
+  if n not in xrange(0, len(options)): raise BoundsException("n out of bounds, please select a number within 1 <= n <= total items")
 
   sampleSize[1] = len(options)
 
-  for i in range(0, num_groups):
+  for i in xrange(0, num_groups):
     if   algorithm == 'SRS': results = SimpleRandomSample(n)
     elif algorithm == 'SYS': results = SystematicSample(n)
     elif algorithm == 'CLS': results = ClusterSample(n)
