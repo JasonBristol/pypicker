@@ -24,7 +24,7 @@ optional arguments:
   -sa [{SRS,SYS,CLS,STS}]
                         specifies the sampling algorithm to use (default SRS)
 
-Created by Jason Bristol <Gethsemane369@gmail.com>
+Created by Jason Bristol <JasonB@my.ccsu.edu>
 ```
 ========
 
