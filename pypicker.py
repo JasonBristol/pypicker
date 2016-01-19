@@ -10,14 +10,14 @@ parser = argparse.ArgumentParser(
   description='Randomly pick n items from a list', 
   epilog='Created by Jason Bristol')
 
-parser.add_argument('n',   metavar='N', type=int, nargs='?',                                    default=1,     help='number of items to pick (default 1)')
-parser.add_argument('i',   metavar='I', type=str,                                                              help='input file of items to choose from')
-parser.add_argument('-ng',              type=int,                                               default=1,     help='number of result groups to generate (default 1)')
-parser.add_argument('-o',               type=str,                                                              help='output file to write results to')
-parser.add_argument('-j',               type=str,                                                              help='join results using specified delimeter')
-parser.add_argument('-v',               action='store_true',                                                   help='verbose output')
-parser.add_argument('-u',               action='store_true',                                                   help='force uniqueness across result groups')
-parser.add_argument('-sa',              type=str, nargs='?', choices=('SRS','SYS','CLS','STS'), default='SRS', help='specifies the sampling algorithm to use (default SRS)')
+parser.add_argument('n',   metavar='N', type=int, nargs=1,                           default=1,     help='number of items to pick (default 1)')
+parser.add_argument('i',   metavar='I', type=str, nargs=1,                                          help='input file of items to choose from')
+parser.add_argument('-ng',              type=int,                                    default=1,     help='number of result groups to generate (default 1)')
+parser.add_argument('-o',               type=str,                                                   help='output file to write results to')
+parser.add_argument('-j',               type=str,                                                   help='join results using specified delimeter')
+parser.add_argument('-v',               action='store_true',                                        help='verbose output')
+parser.add_argument('-u',               action='store_true',                                        help='force uniqueness across result groups')
+parser.add_argument('-sa',              type=str, choices=('SRS','SYS','CLS','STS'), default='SRS', help='specifies the sampling algorithm to use (default SRS)')
 
 args = parser.parse_args()
 
