@@ -125,4 +125,3 @@ if __name__ == "__main__":
   except OutputException      as e: print "\n{}: {}\n".format(type(e).__name__, e.msg)
   except ResultSetException   as e: print "\n{}: {}\n".format(type(e).__name__, e.msg)
   except                          : print "\n{}: {}\n".format("Unexpected error", sys.exc_info()[1])
-  finally                         : sys.exit(0)
