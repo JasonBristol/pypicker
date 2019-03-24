@@ -27,25 +27,21 @@ optional arguments:
 Created by Jason Bristol <json.bristol@gmail.com>
 ```
 
-**Randomly pick 2 items from a list**
+## Randomly pick 2 items from a list
 
-```$ python pypicker.py 2 a b c d```
+`$ python pypicker.py 2 a b c d`
 
 >c<br/>
 a<br/>
 
-========
+## Randomly pick an item from a file
 
-**Randomly pick an item from a file**
-
-```$ python pypicker.py -i test_input.txt```
+`$ python pypicker.py -i test_input.txt`
 >Yolanda Holland
 
-========
+## Randomly pick 4 groups of 4 from a list
 
-**Randomly pick 4 groups of 4 from a list**
-
-```$ python pypicker.py 4 -i test_input.txt -g 4 -v```
+`$ python pypicker.py 4 -i test_input.txt -g 4 -v`
 
 >Picking 4 item(s) out of 29:<br/>
 Faith Boone<br/>
@@ -71,11 +67,9 @@ Jessica Mitchell<br/>
 Boyd Hunter<br/>
 Wilson Marshall<br/>
 
-========
+## Randomly pick 4 unique groups of 4 from a list
 
-**Randomly pick 4 unique groups of 4 from a list**
-
-```$ python pypicker.py 4 -i test_input.txt -g -v -u```
+`$ python pypicker.py 4 -i test_input.txt -g -v -u`
 
 >Picking 4 item(s) out of 25:<br/>
 Danielle Gill<br/>
@@ -101,11 +95,9 @@ Trevor Goodman<br/>
 Lewis Potter<br/>
 Betty Lane<br/>
 
-========
+## Write output to a file
 
-**Write output to a file**
-
-```$ python pypicker.py 4 -i test_input.txt -o test_ouptut.txt```
+`$ python pypicker.py 4 -i test_input.txt -o test_ouptut.txt`
 
 *test_output.txt*
 
@@ -114,12 +106,8 @@ Leona Evans<br/>
 Boyd Hunter<br/>
 Phillip Bailey
 
-========
+## Join the results and seperate by a delimeter
 
-**Join the results and seperate by a delimeter**
-
-```$ python pypicker.py 4 -i test_input.txt -j ', '```
+`$ python pypicker.py 4 -i test_input.txt -j ', '`
 
 >Shirley Joseph, Brandon Rice, Ellis Jennings, Anita Larson
-
-========
